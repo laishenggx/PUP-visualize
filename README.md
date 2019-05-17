@@ -13,7 +13,8 @@ Metpy的官方样例中，将PUP产品文件读出后，做了如下变换，将
 xlocs = rng * np.sin(np.deg2rad(az[:, np.newaxis]))
 ylocs = rng * np.cos(np.deg2rad(az[:, np.newaxis]))
 ```
-`xlocs`和`ylocs`是某点到雷达的经向和纬向距离，添加了经纬度映射：
+`xlocs`和`ylocs`是某点到雷达的经向和纬向距离<br>
+这样根据雷达经纬度信息，还有经向和纬向距离，很容易就可以算图上每一点的距离经纬度：
 ```
 sta_lon=f.lon  #站点经纬度
 sta_lat=f.lat
@@ -27,9 +28,13 @@ for i in range(xlocs.shape[0]):
          dx=np.cos(np.deg2rad(lat[i][j]))*dy
          lon[i,j]=sta_lon+xlocs[i][j]/dx
 ```
+绘图使用的是`basemap`和`matplotlib`
+投影选择`等距方位投影(Azimuthal Equidistant Projection)`，用这个投影时1个纬距和1个经距是相等的，不然等距离圈不是正圆形<br>
 
+## 日后更新计划
 我个人不做中尺度方向(被老板狠心抛弃QAQ)，这个程序是写给泽儿(我GF可爱多)的。<br>
 目前仅做了基本反射率，基本速度还有其他的她让我弄我再弄...<br>
+还有就是将数据输出成网格，这个看情况<br>
 
 <p align="left">
     <img src="https://github.com/laishenggx/PUP-viusalize/raw/master/sample.png" alt="Sample"  width="700">
