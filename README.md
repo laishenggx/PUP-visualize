@@ -32,7 +32,13 @@ for i in range(xlocs.shape[0]):
          lon[i,j]=sta_lon+xlocs[i][j]/dx
 ```
 绘图使用的是`basemap(1.2.0)`和`matplotlib(3.0.3)`<br>
-投影选择`等距方位投影(Azimuthal Equidistant Projection)`，用这个投影时1个纬距和1个经距是相等的，不然等距离圈不是正圆形<br>
+投影选择`等距方位投影(Azimuthal Equidistant Projection)`<br>
+此时1个纬距和1个经距是相等的，否则等距离圈不是正圆形<br>
+(下图是等经度投影cyl，自己体会思考吧，发现蛮多人都没发现到这个问题，直接等经纬度投影上边画圆)<br>
+<p align="left">
+    <img src="https://github.com/laishenggx/PUP-viusalize/raw/master/sample_cyl.png" alt="Sample"  width="700">
+</p>
+
 地图shp文件请移步气象家园搜索下载<br>
 
 ## 日后更新计划
