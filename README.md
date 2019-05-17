@@ -3,8 +3,11 @@ Python3可视化雷达PUP数据产品(CINRAD-PUP)
 * Coder: Lai Sheng @ College of Atmospheric Science, Chengdu University of Information Technology.
 * E-mail: laish12@lzu.edu.cn
 
-由于[PyCINRAD](https://github.com/CyanideCN/PyCINRAD)的`cinrad.io.PUP`目前有BUG，暂时无法正确读取数据的经纬度信息从而画图。<br>
-所以参考了[`metpy.io.Level3File`](https://unidata.github.io/MetPy/latest/examples/formats/NEXRAD_Level_3_File.html#sphx-glr-examples-formats-nexrad-level-3-file-py)雷达PUP数据接口的官方样例，编写了这个脚本。<br>
+由于[PyCINRAD](https://github.com/CyanideCN/PyCINRAD)的`cinrad.io.PUP`目前有BUG，暂时无法正确生成数据的经纬度信息从而画图。<br>
+所以我参考了[`metpy.io.Level3File`](https://unidata.github.io/MetPy/latest/examples/formats/NEXRAD_Level_3_File.html#sphx-glr-examples-formats-nexrad-level-3-file-py)雷达PUP数据接口的官方样例，编写了这个脚本。<br>
+<p align="left">
+    <img src="https://github.com/laishenggx/PUP-viusalize/raw/master/sample.png" alt="Sample"  width="700">
+</p>
 
 ## 坐标变换
 Metpy的官方样例中，将PUP产品文件读出后，做了如下变换，将极坐标投影到了平面直角X-Y坐标系中：
@@ -33,9 +36,4 @@ for i in range(xlocs.shape[0]):
 
 ## 日后更新计划
 我个人不做中尺度方向(被老板狠心抛弃QAQ)，这个程序是写给泽儿(我GF可爱多)的。<br>
-目前仅做了基本反射率，基本速度还有其他的她让我弄我再弄...<br>
-还有就是将数据输出成网格，这个看情况<br>
-
-<p align="left">
-    <img src="https://github.com/laishenggx/PUP-viusalize/raw/master/sample.png" alt="Sample"  width="700">
-</p>
+目前仅做了基本反射率，基本速度还有就是将数据输出成网格的，她让我弄我再弄吧~<br>
