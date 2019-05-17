@@ -31,8 +31,9 @@ for i in range(xlocs.shape[0]):
          dx=np.cos(np.deg2rad(lat[i][j]))*dy
          lon[i,j]=sta_lon+xlocs[i][j]/dx
 ```
-绘图使用的是`basemap`和`matplotlib`
+绘图使用的是`basemap(1.2.0)`和`matplotlib(3.0.3)`<br>
 投影选择`等距方位投影(Azimuthal Equidistant Projection)`，用这个投影时1个纬距和1个经距是相等的，不然等距离圈不是正圆形<br>
+地图shp文件请移步气象家园搜索下载<br>
 
 ## 日后更新计划
 我个人不做中尺度方向(被老板狠心抛弃QAQ)，这个程序是写给泽儿(我GF可爱多)的。<br>
