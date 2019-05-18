@@ -1,4 +1,4 @@
-# PUP-viusalize
+# PUP-visualize
 Python3可视化雷达PUP数据产品(CINRAD-PUP)
 * Coder: Lai Sheng @ College of Atmospheric Science, Chengdu University of Information Technology.
 * E-mail: laish12@lzu.edu.cn
@@ -50,7 +50,7 @@ for cir in [50,100,150,200,230]:#画等距离圈
 ```
 ### 方位角线
 画方位角线也是类似等距离圈的做法，但是画线只用了两个点<br>
-一个是雷达站点的经纬度(可以从文件中读取)，另一个是最远的一个点<br>
+一个是雷达站点的经纬度(可以从文件中读取)，另一个是径向上最远的一个点<br>
 ```
 for az_line in np.arange(30,360+30,30):
     az_lon=[sta_lon,lon[np.where(np.ceil(az)==az_line),-1]]
@@ -65,7 +65,6 @@ for az_line in np.arange(30,360+30,30):
 <p align="left">
     <img src="https://github.com/laishenggx/PUP-viusalize/raw/master/sample_cyl.png" alt="Sample"  width="700">
 </p>
-
 地图shp文件请移步气象家园搜索下载<br>
 
 ## 日后更新计划
