@@ -42,12 +42,11 @@ for i in range(xlocs.shape[0]):
          lon[i,j]=sta_lon+xlocs[i][j]/dx
 
 fig, ax = plt.subplots(figsize=(10, 10))
-lon_leftup=106.3;lat_leftup=25.35
-lon_rightdown=107.7;lat_rightdown=24.35
-# m = Basemap(projection='cyl', llcrnrlat=lat_rightdown, urcrnrlat=lat_leftup, llcrnrlon=lon_leftup, urcrnrlon=lon_rightdown, resolution='l')
-width = 2800000; lon_0 = sta_lon; lat_0 = sta_lat
+
+width = 2800; lon_0 = sta_lon; lat_0 = sta_lat
 m = Basemap(width=width,height=width,projection='aeqd',
             lat_0=lat_0,lon_0=lon_0)
+
 m.readshapefile('C:\\dt\\county_2004', 'sf', color='w',linewidth=0.6)
 m.readshapefile('C:\\dt\\dijishi_2004', 'aa', drawbounds=False)
 for info, shape in zip(m.aa_info, m.aa):
@@ -66,8 +65,8 @@ for cir in [50,100,150,200,230]:#画等距离圈
     m.plot(cir_lon,cir_lat,'w',linewidth=0.8)
 
 for az_line in np.arange(30,360+30,30):
-    az_lon=[sta_lon,lon[np.where(np.ceil(az)==az_line),-1]]
-    az_lat=[sta_lat,lat[np.where(np.ceil(az)==az_line),-1]]
+    az_lon=[sta_lon,lon[np.where(np.rint(az)==az_line),-1][0,0]]
+    az_lat=[sta_lat,lat[np.where(np.rint(az)==az_line),-1][0,0]]
     az_lon,az_lat=m(az_lon,az_lat)
     m.plot(az_lon, az_lat, 'w', linewidth=0.8)
 
@@ -90,5 +89,5 @@ lon2,lat2=m(np.max(lon),np.max(lat))
 ax.set_ylim([lat1,lat2])
 ax.set_xlim([lon1,lon2])
 
-# plt.show()
-plt.savefig('111.png',dpi=300,bbox_inches='tight')
+plt.savefig('sample_R19.png',dpi=100,bbox_inches='tight')
+plt.show()
