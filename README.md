@@ -72,20 +72,6 @@ for az_line in np.arange(30,360+30,30):
 </p>
 地图shp文件请移步气象家园搜索下载<br>
 
-### 速度图数据调整
-我们使用Metpy读取出基本速度数据并画图，与PUP中对比时，发现速度在15m/s以上的数据均是偏高的<br>
-如果进行以下调整，画出的图就和PUP的一模一样了：
-```
-adj_range=True #是否调整数据范围
-if adj_range:
-    data[np.where((data<=-15) & (data>=-20))]+=5
-    data[np.where((data<=-27))]+=10
-    data[np.where((data>=10)&(data<=20))]-=5
-    data[np.where((data>20))]-=10
-    data[np.where((data>27))]-=5
-```
-目前暂时不知道原因(色标值的对应是没问题的)，可能与一些PUP内置的处理过程有关。<br>
-或者是接口我没用对...
 
 ## 日后更新计划
 我个人不做中尺度方向(被老板狠心抛弃QAQ)，这个程序是写给泽儿(我GF可爱多)的。<br>
