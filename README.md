@@ -70,8 +70,3 @@ for az_line in np.arange(30,360+30,30):
     <img src="https://github.com/laishenggx/PUP-viusalize/raw/master/sample_cyl.png" alt="Sample"  width="700">
 </p>
 地图shp文件请移步气象家园搜索下载<br>
-
-
-## 日后更新计划
-我个人不做中尺度方向(被老板狠心抛弃QAQ)，这个程序是写给泽儿(我GF可爱多)的。<br>
-目前仅做了基本反射率，基本速度还有就是将数据输出成网格的，她有需要的时候我再弄吧~<br>
